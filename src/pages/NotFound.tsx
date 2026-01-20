@@ -1,5 +1,6 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import logoAltessia from '@/assets/logo-altessia.png';
 
 const NotFound = () => {
   const location = useLocation();
@@ -9,14 +10,22 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
-        </a>
-      </div>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background px-6">
+      <img 
+        src={logoAltessia} 
+        alt="ALTESSIA" 
+        className="h-10 w-auto object-contain mb-12"
+      />
+      <h1 className="font-serif text-6xl md:text-7xl text-foreground mb-4">404</h1>
+      <p className="text-lg text-muted-foreground mb-8">
+        Oops! Page not found
+      </p>
+      <Link 
+        to="/" 
+        className="btn-primary"
+      >
+        Return to Home
+      </Link>
     </div>
   );
 };
