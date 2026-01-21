@@ -139,8 +139,14 @@
   }
 
   .hero-tagline {
-    font-family: var(--font-serif);
-    @apply text-sm md:text-base text-primary italic;
+    @apply text-xs uppercase tracking-[0.2em] font-sans;
+    color: hsl(var(--golden-beige));
+  }
+
+  /* Eyebrow text - uppercase golden beige */
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.2em] font-sans;
+    color: hsl(var(--golden-beige));
   }
 
   /* Section Styling */
