@@ -27,7 +27,7 @@ export const CTASection = () => {
       <div className="max-w-content mx-auto">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="section-heading mb-6 reveal">
-            Ready to feel better in the sky?
+            Ready to feel <em>better</em> in the sky?
           </h2>
           <p className="section-subheading mx-auto mb-4 reveal">
             Be the first to access Altessia at launch.

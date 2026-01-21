@@ -129,12 +129,19 @@
   /* Hero Elements */
   .hero-headline {
     font-family: var(--font-serif);
-    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-foreground leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal leading-tight;
+    color: hsl(var(--charcoal));
     letter-spacing: -0.02em;
   }
 
+  .hero-headline em, .hero-headline i {
+    font-style: italic;
+    color: hsl(var(--golden-beige));
+  }
+
   .hero-subheadline {
-    @apply text-lg md:text-xl text-muted-foreground font-light leading-relaxed;
+    @apply text-lg md:text-xl font-light leading-relaxed;
+    color: hsl(var(--charcoal));
     max-width: 36ch;
   }
 
@@ -152,12 +159,19 @@
   /* Section Styling */
   .section-heading {
     font-family: var(--font-serif);
-    @apply text-3xl md:text-4xl lg:text-5xl font-light text-foreground;
+    @apply text-3xl md:text-4xl lg:text-5xl font-normal;
+    color: hsl(var(--charcoal));
     letter-spacing: -0.01em;
   }
 
+  .section-heading em, .section-heading i {
+    font-style: italic;
+    color: hsl(var(--golden-beige));
+  }
+
   .section-subheading {
-    @apply text-muted-foreground text-base md:text-lg font-light leading-relaxed max-w-2xl;
+    @apply text-base md:text-lg font-light leading-relaxed max-w-2xl;
+    color: hsl(var(--charcoal) / 0.75);
   }
 
   .section-container {
