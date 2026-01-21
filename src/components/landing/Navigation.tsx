@@ -40,12 +40,12 @@ export const Navigation = () => {
     >
       <nav className="max-w-content mx-auto px-6 md:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          {/* Logo - scaled 20% larger for premium presence */}
           <a href="#" className="flex items-center">
             <img 
               src={logoAltessia} 
               alt="ALTESSIA" 
-              className="h-8 md:h-10 w-auto object-contain"
+              className="h-10 md:h-12 w-auto object-contain"
             />
           </a>
 

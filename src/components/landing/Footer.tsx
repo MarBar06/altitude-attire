@@ -5,12 +5,12 @@ export const Footer = () => {
     <footer className="bg-muted/30 border-t border-border/30">
       <div className="max-w-content mx-auto px-6 md:px-8 lg:px-12 py-12 md:py-16">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Logo */}
+          {/* Logo - scaled 20% larger for premium presence */}
           <div className="flex flex-col items-center md:items-start gap-4">
             <img 
               src={logoAltessia} 
               alt="ALTESSIA" 
-              className="h-8 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
             <p className="font-serif italic text-muted-foreground">
               Feel better. Fly better.

@@ -30,19 +30,20 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <p className="hero-tagline mb-6 animate-fade-up">
-              Where nature meets intention.
+            {/* Eyebrow - uppercase, letter-spaced, golden beige */}
+            <p className="text-xs uppercase tracking-[0.2em] text-golden-beige font-sans mb-4 animate-fade-up">
+              Where nature meets intention
             </p>
             
-            <h1 className="hero-headline mb-6 animate-fade-up delay-100">
+            <h1 className="hero-headline mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
               For those who live<br />in the sky.
             </h1>
             
-            <p className="hero-subheadline mx-auto lg:mx-0 mb-4 animate-fade-up delay-200">
+            <p className="hero-subheadline mx-auto lg:mx-0 mb-4 animate-fade-up" style={{ animationDelay: '0.2s' }}>
               Feel better, fly stronger, and recover faster—every time you travel.
             </p>
             
-            <p className="text-sm text-muted-foreground mb-10 animate-fade-up delay-300">
+            <p className="text-sm text-muted-foreground mb-10 animate-fade-up" style={{ animationDelay: '0.3s' }}>
               Pure ingredients. Elevated wellness. Designed for flight.
             </p>
 
@@ -70,18 +71,17 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Hero Image */}
-          <div className="relative order-first lg:order-last animate-fade-up delay-200">
-            <div className="relative aspect-square max-w-md mx-auto lg:max-w-none">
-              {/* Decorative elements */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-accent/5 to-transparent rounded-3xl" />
+          {/* Hero Image - Editorial lifestyle photograph */}
+          <div className="relative order-first lg:order-last animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            <div className="relative aspect-[16/10] max-w-lg mx-auto lg:max-w-none">
+              {/* Subtle decorative glow */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-golden-beige/10 to-sage/10 rounded-[2rem] blur-3xl" />
               
-              {/* Main image */}
+              {/* Main editorial image */}
               <img
                 src={patchHero}
-                alt="ALTESSIA wellness patch"
-                className="relative z-10 w-full h-full object-cover rounded-3xl shadow-elevated"
+                alt="Cabin crew member with ALTESSIA wellness patch - a quiet moment of self-care in transit"
+                className="relative z-10 w-full h-full object-cover object-center rounded-2xl shadow-elevated"
               />
             </div>
           </div>
