@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import logoAltessia from '@/assets/logo-altessia.png';
+import logoAltessia from '@/assets/logotrans_beige.png';
 
 const navLinks = [
-  { label: 'Why Flying', href: '#why-flying' },
-  { label: 'Patches', href: '#patches' },
+  { label: 'Why Altessia', href: '#why-altessia' },
+  { label: 'patches', href: '#altessia-wellness-patches' },
   { label: 'Science', href: '#science' },
   { label: 'Community', href: '#community' },
   { label: 'Join', href: '#join' },
@@ -32,13 +32,25 @@ export const Navigation = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? 'bg-background/90 backdrop-blur-md shadow-soft'
-          : 'bg-transparent'
+          ? 'bg-ivory/85 backdrop-blur-lg border-b border-sage/20 shadow-soft py-1'
+          : 'bg-transparent py-2'
       }`}
     >
       <nav className="max-w-content mx-auto px-6 md:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-20 md:h-28">
+          {/* Logo - Presencia Premium */}
+          <a href="#" className="flex items-center transition-transform duration-500 hover:scale-[1.02]">
+            <img 
+              src={logoAltessia} 
+              alt="ALTESSIA" 
+              className="w-auto" 
+              style={{ 
+                height: '150px',    
+                minWidth: '220px',  
+                objectFit: 'contain'
+              }}
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo - scaled for premium presence and better proportions */}
           <a href="#" className="flex items-center">
@@ -49,64 +61,43 @@ export const Navigation = () => {
             />
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Color Beige aplicado */}
           <div className="hidden md:flex items-center gap-8 lg:gap-12">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="nav-link"
+                className="text-xs uppercase tracking-[0.15em] text-golden-beige hover:text-charcoal transition-colors duration-300 font-sans font-medium"
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Color Beige aplicado a las líneas */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-golden-beige"
             aria-label="Toggle menu"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {mobileOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+            <div className="w-6 h-5 flex flex-col justify-between">
+              <span className={`h-0.5 w-full bg-golden-beige transition-all ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`h-0.5 w-full bg-golden-beige transition-all ${mobileOpen ? 'opacity-0' : ''}`} />
+              <span className={`h-0.5 w-full bg-golden-beige transition-all ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            </div>
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            mobileOpen ? 'max-h-64 pb-6' : 'max-h-0'
-          }`}
-        >
-          <div className="flex flex-col gap-4 pt-4 border-t border-border/30">
+        {/* Mobile Menu - Color Beige aplicado a los links móviles */}
+        <div className={`md:hidden overflow-hidden transition-all duration-500 ${mobileOpen ? 'max-h-64 pb-8' : 'max-h-0'}`}>
+          <div className="flex flex-col gap-5 pt-6 border-t border-sage/20">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="nav-link py-2"
+                className="text-xs uppercase tracking-widest text-golden-beige font-medium hover:text-charcoal transition-colors"
               >
                 {link.label}
               </a>

@@ -79,13 +79,14 @@ export const ProblemSection = () => {
   }, []);
 
   return (
-    <section id="why-flying" ref={sectionRef} className="section-container bg-muted/30 paper-texture">
+    <section id="why-altessia" ref={sectionRef} className="section-container bg-muted/30 paper-texture">
       <div className="max-w-content mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="section-heading mb-4 reveal">
-            Flying is not neutral for the body.
-          </h2>
+        <p className="text-xs uppercase tracking-[0.2em] text-golden-beige font-sans mb-4 reveal">WHY ALTESSIA</p>
+        <h2 className="section-heading mb-4 reveal">
+          Flying is <span className="text-golden-beige">not neutral</span> for the body.
+        </h2>
           <p className="section-subheading mx-auto reveal">
             Only those who live in the sky know what it truly feels like.
           </p>
@@ -120,7 +121,7 @@ export const ProblemSection = () => {
 
         {/* Closing Line */}
         <div className="text-center mt-16 reveal">
-          <p className="font-serif text-xl md:text-2xl text-foreground italic">
+          <p className="font-serif text-xl md:text-3xl text-foreground italic">
             This is the hidden cost of life in the sky.
           </p>
         </div>
