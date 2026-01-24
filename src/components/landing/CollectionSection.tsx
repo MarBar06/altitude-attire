@@ -3,9 +3,9 @@ import { Zap, Waves, Wind, ShieldCheck, Moon, ChevronLeft, ChevronRight } from '
 // Importación de tus assets
 import patch1 from '@/assets/patchgreen.png';
 import patch2 from '@/assets/patch_orange.png';
-import patch3 from '@/assets/patch3.png';
-import patch4 from '@/assets/patch4.png';
-import patch5 from '@/assets/patch5.png';
+import patch3 from '@/assets/patch_beige.png';
+import patch4 from '@/assets/patch_olive.png';
+import patch5 from '@/assets/patch_golden.png';
 
 const products = [
   {

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import handsImage from '@/assets/hands2.png'; 
+import handsImage from '@/assets/mano.png'; 
 
 const advantages = [
   {
