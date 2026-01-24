@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import handsImage from '@/assets/hands2.png'; 
 
 const advantages = [
   {
@@ -79,34 +80,35 @@ export const ScienceSection = () => {
   }, []);
 
   return (
-    <section id="science" ref={sectionRef} className="section-container">
-      <div className="max-w-content mx-auto">
+    <section id="science" ref={sectionRef} className="section-container bg-ivory/50">
+      <div className="max-w-content mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Left Column - Content */}
+          
+          {/* Columna Izquierda - Contenido */}
           <div>
             <h2 className="section-heading mb-6 reveal">
-              Why transdermal works,<br />especially in the air.
+              Why <span className="italic font-serif italic-emphasis" style={{ color: '#C6A275' }}>transdermal</span> works,<br />especially in the air.
             </h2>
             <p className="section-subheading mb-10 reveal">
               Transdermal delivery allows active ingredients to absorb directly through the skin over time.
             </p>
 
-            {/* Advantages List */}
+            {/* Lista de Ventajas con Títulos Beige */}
             <div className="space-y-2">
               {advantages.map((advantage, index) => (
                 <div
                   key={advantage.title}
                   className="advantage-item reveal"
-                  style={{ transitionDelay: `${index * 50}ms` }}
+                  style={{ transitionDelay: `${index * 80}ms` }}
                 >
                   <div className="advantage-icon">
                     {advantage.icon}
                   </div>
                   <div>
-                    <h4 className="font-medium text-foreground mb-1">
+                    <h4 className="font-bold mb-1" style={{ color: '#C6A275' }}>
                       {advantage.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-charcoal/60">
                       {advantage.description}
                     </p>
                   </div>
@@ -115,16 +117,31 @@ export const ScienceSection = () => {
             </div>
           </div>
 
-          {/* Right Column - Closing */}
-          <div className="lg:sticky lg:top-32 reveal">
-            <div className="p-8 md:p-10 bg-muted/30 rounded-3xl">
-              <p className="font-serif text-2xl md:text-3xl text-foreground italic leading-relaxed mb-6">
+          {/* Columna Derecha - Texto arriba e Imagen abajo */}
+          <div className="lg:sticky lg:top-32 flex flex-col gap-6 reveal">
+            
+            {/* Bloque de Texto con Fondo Verde Salvia (#C2C9C0) */}
+            <div 
+              className="p-8 md:p-10 rounded-3xl shadow-sm" 
+              style={{ backgroundColor: '#C2C9C0' }}
+            >
+              <p className="font-serif text-2xl md:text-3xl text-white italic leading-relaxed mb-6">
                 Designed with frequent flyers in mind.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Altessia is being developed in collaboration with cabin crew and frequent travelers who understand the physical demands of life in the air.
+              <p className="text-white/90 leading-relaxed font-sans text-sm md:text-base">
+                Altessia is being developed in collaboration with cabin crew and frequent travelers who understand the unique physical demands of life in the air.
               </p>
             </div>
+
+            {/* Imagen Cuadrada Debajo */}
+            <div className="relative aspect-square overflow-hidden rounded-2xl shadow-soft border border-sage/10">
+              <img 
+                src={handsImage} 
+                alt="Designed for cabin crew" 
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+
           </div>
         </div>
       </div>

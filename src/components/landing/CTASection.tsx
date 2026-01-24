@@ -24,23 +24,28 @@ export const CTASection = () => {
 
   return (
     <section id="join" ref={sectionRef} className="section-container">
-      <div className="max-w-content mx-auto">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="section-heading mb-6 reveal">
-            Ready to feel better in the sky?
-          </h2>
-          <p className="section-subheading mx-auto mb-4 reveal">
-            Be the first to access Altessia at launch.
-          </p>
-          <p className="text-muted-foreground mb-12 reveal">
-            Join the pre-order list for exclusive early access and founding member pricing.
-          </p>
-
-          <div className="reveal">
-            <PreOrderForm variant="cta" />
-          </div>
+    <div className="max-w-content mx-auto">
+      <div className="max-w-2xl mx-auto text-center">
+        <p className="text-xs uppercase tracking-[0.2em] text-golden-beige font-sans mb-4 reveal">
+          JOIN THE PRE ORDER LIST
+        </p>
+        
+        <h2 className="section-heading mb-6 reveal">
+          Ready to <span className="italic font-serif italic-emphasis" style={{ color: '#C6A275' }}> feel better</span> in the sky?
+        </h2>
+  
+        <p className="section-subheading mx-auto mb-4 reveal">
+          Be the first to access Altessia at launch.
+        </p>
+        <p className="text-muted-foreground mb-12 reveal">
+          Join the pre-order list for exclusive early access and founding member pricing.
+        </p>
+  
+        <div className="reveal">
+          <PreOrderForm variant="cta" />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 };

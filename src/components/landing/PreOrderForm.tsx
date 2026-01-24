@@ -5,10 +5,11 @@ interface PreOrderFormProps {
 }
 
 const patchOptions = [
-  { id: 'circulation', label: 'Circulation' },
-  { id: 'hydration', label: 'Hydration' },
-  { id: 'digestion', label: 'Digestion' },
-  { id: 'sleep', label: 'Sleep' },
+  { id: 'CALM & FOCUS', label: 'CALM & FOCUS' },
+  { id: 'ANTI-FATIGUE LEGS', label: 'ANTI-FATIGUE LEGS' },
+  { id: 'BLOATING & DIGEST COMFORT', label: 'BLOATING & DIGEST COMFORT' },
+  { id: 'SKIN BARRIER', label: 'SKIN BARRIER' },
+  { id: 'JET LAG RESTORED', label: 'JET LAG RESTORED' },
 ];
 
 export const PreOrderForm = ({ variant = 'hero' }: PreOrderFormProps) => {
