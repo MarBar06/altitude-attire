@@ -39,14 +39,16 @@ export const HeroSection = () => {
               For those who <br />
               <span className="font-inter" style={{ color: '#C6A275' }}>LIVE</span> <br />
               in the sky
+            <h1 className="hero-headline mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+              Ready to feel <em>better</em><br />in the sky?
             </h1>
             
             <p className="hero-subheadline mx-auto lg:mx-0 mb-4 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              Feel better, fly stronger, and recover faster—every time you travel.
+              Travel feeling confident
             </p>
             
-            <p className="text-sm text-muted-foreground mb-10 animate-fade-up" style={{ animationDelay: '0.3s' }}>
-              Pure ingredients. Elevated wellness. Designed for flight.
+            <p className="text-sm mb-10 animate-fade-up" style={{ animationDelay: '0.3s', color: 'hsl(35 3% 45%)' }}>
+              Where nature meets intention. Pure ingredients. Elevated wellness.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up" style={{ animationDelay: '0.4s' }}>

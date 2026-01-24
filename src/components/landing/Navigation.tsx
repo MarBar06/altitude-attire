@@ -51,6 +51,13 @@ export const Navigation = () => {
                 minWidth: '220px',  
                 objectFit: 'contain'
               }}
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo - scaled for premium presence and better proportions */}
+          <a href="#" className="flex items-center">
+            <img 
+              src={logoAltessia} 
+              alt="ALTESSIA" 
+              className="h-8 md:h-9 w-auto object-contain"
             />
           </a>
 

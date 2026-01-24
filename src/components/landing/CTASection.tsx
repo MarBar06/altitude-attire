@@ -43,6 +43,21 @@ export const CTASection = () => {
   
         <div className="reveal">
           <PreOrderForm variant="cta" />
+      <div className="max-w-content mx-auto">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="section-heading mb-6 reveal">
+            Ready to feel <em>better</em> in the sky?
+          </h2>
+          <p className="section-subheading mx-auto mb-4 reveal">
+            Be the first to access Altessia at launch.
+          </p>
+          <p className="text-muted-foreground mb-12 reveal">
+            Join the pre-order list for exclusive early access and founding member pricing.
+          </p>
+
+          <div className="reveal">
+            <PreOrderForm variant="cta" />
+          </div>
         </div>
       </div>
     </div>
