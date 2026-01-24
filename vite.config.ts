@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // ADD THIS LINE BELOW (Replace 'altitude-attire' with your exact repo name)
+  base: "/altitude-attire/", 
+  
   server: {
     host: "::",
     port: 8080,
