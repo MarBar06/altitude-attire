@@ -38,30 +38,22 @@ export const Navigation = () => {
           : 'bg-transparent py-2'
       }`}
     >
-      <nav className="max-w-content mx-auto px-6 md:px-8 lg:px-12">
+      <nav className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20 md:h-28">
           {/* Logo - Presencia Premium */}
           <a href="#" className="flex items-center transition-transform duration-500 hover:scale-[1.02]">
             <img 
               src={logoAltessia} 
               alt="ALTESSIA" 
-              className="w-auto" 
+              className="w-auto object-contain" 
               style={{ 
-                height: '150px',    
-                minWidth: '220px',  
-                objectFit: 'contain'
+                height: '120px',    
+                minWidth: '180px'
               }}
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo - scaled for premium presence and better proportions */}
-          <a href="#" className="flex items-center">
-            <img 
-              src={logoAltessia} 
-              alt="ALTESSIA" 
-              className="h-8 md:h-9 w-auto object-contain"
             />
           </a>
 
-          {/* Desktop Navigation - Color Beige aplicado */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 lg:gap-12">
             {navLinks.map((link) => (
               <a
@@ -75,7 +67,7 @@ export const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button - Color Beige aplicado a las líneas */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden p-2 text-golden-beige"
@@ -89,7 +81,7 @@ export const Navigation = () => {
           </button>
         </div>
 
-        {/* Mobile Menu - Color Beige aplicado a los links móviles */}
+        {/* Mobile Menu Content */}
         <div className={`md:hidden overflow-hidden transition-all duration-500 ${mobileOpen ? 'max-h-64 pb-8' : 'max-h-0'}`}>
           <div className="flex flex-col gap-5 pt-6 border-t border-sage/20">
             {navLinks.map((link) => (
