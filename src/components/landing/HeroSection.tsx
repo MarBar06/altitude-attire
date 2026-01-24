@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { PreOrderForm } from './PreOrderForm';
-import heroImage from '@/assets/Cabincrew4.png';
+import heroImage from '@/assets/patchhero.jpg';
 
 export const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -24,7 +24,8 @@ export const HeroSection = () => {
           <div className="flex flex-col space-y-8 z-10">
             <div className="space-y-4">
               <p className="text-xs uppercase tracking-[0.3em] text-golden-beige font-black animate-fade-in">
-                Redefining In-Flight Wellness
+                Where nature meets intention.
+
               </p>
               <h1 className="text-5xl md:text-7xl font-inter font-black uppercase tracking-tighter text-charcoal leading-[0.9] animate-slide-up">
                 Arrive <br />

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Zap, Waves, Wind, ShieldCheck, Moon, ChevronLeft, ChevronRight } from 'lucide-react';
 // Importación de tus assets
-import patch1 from '@/assets/patch1.png';
-import patch2 from '@/assets/patch2.png';
+import patch1 from '@/assets/patchgreen.png';
+import patch2 from '@/assets/patch_orange.png';
 import patch3 from '@/assets/patch3.png';
 import patch4 from '@/assets/patch4.png';
 import patch5 from '@/assets/patch5.png';
