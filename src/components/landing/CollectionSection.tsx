@@ -219,7 +219,11 @@ export const CollectionSection = () => {
 
         {/* Mobile Indicator */}
         <div className="md:hidden text-center mt-4">
-           <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-charcoal/30">Slide to explore</span>
+           <div className="flex items-center justify-center gap-2 mb-1">
+             <ChevronLeft size={14} className="text-charcoal/50" />
+             <ChevronRight size={14} className="text-charcoal/50" />
+           </div>
+           <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-charcoal/60">Slide to explore</span>
         </div>
 
         <div className="text-center mt-12 reveal">
