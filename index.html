@@ -363,76 +363,76 @@
 
       <div class="form-wrapper fade-up" id="formWrapper">
         <form id="preOrderForm" action="https://manage.kmail-lists.com/subscriptions/subscribe" method="POST">
-          <input type="hidden" name="g" value="ThaeXj" />
-
+        <input type="hidden" name="g" value="ThaeXj" />
+      
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="$first_name" placeholder="Your name" required />
+        </div>
+      
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+      
+        <div class="form-row-grid">
           <div class="form-row">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="$first_name" placeholder="Your name" required />
+            <label for="city">City</label>
+            <input type="text" id="city" name="City" placeholder="City" required />
           </div>
-
           <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required />
-          </div>
-
-          <div class="form-row-grid">
-            <div class="form-row">
-              <label for="city">City</label>
-              <input type="text" id="city" name="city" placeholder="City" required />
-            </div>
-            <div class="form-row">
-              <label for="countrySelect">Country</label>
-              <select id="countrySelect" name="country" required>
-                <option value="">Search your country...</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <label for="role">Role</label>
-            <select id="role" name="role" required>
-              <option value="" disabled selected>Select your role</option>
-              <option value="Cabin Crew">Cabin Crew</option>
-              <option value="Frequent Flyer">Frequent Flyer</option>
-              <option value="Other">Other</option>
+            <label for="countrySelect">Country</label>
+            <select id="countrySelect" name="$country" required>
+              <option value="">Search your country...</option>
             </select>
           </div>
+        </div>
+      
+        <div class="form-row">
+          <label for="role">Role</label>
+          <select id="role" name="Role" required>
+            <option value="" disabled selected>Select your role</option>
+            <option value="Cabin Crew">Cabin Crew</option>
+            <option value="Frequent Flyer">Frequent Flyer</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
 
-          <div class="form-checkboxes">
-            <p class="form-checkboxes-label">Which patches are you interested in?</p>
+  <div class="form-checkboxes">
+    <p class="form-checkboxes-label">Which patches are you interested in?</p>
 
-            <label class="form-check">
-              <input type="checkbox" name="patches" value="Calm & Focus" />
-              <span>Calm &amp; Focus</span>
-            </label>
+    <label class="form-check">
+      <input type="checkbox" name="Interest_Calm" value="true" />
+      <span>Calm &amp; Focus</span>
+    </label>
 
-            <label class="form-check">
-              <input type="checkbox" name="patches" value="Anti-Fatigue Legs" />
-              <span>Anti-Fatigue Legs</span>
-            </label>
+    <label class="form-check">
+      <input type="checkbox" name="Interest_Legs" value="true" />
+      <span>Anti-Fatigue Legs</span>
+    </label>
 
-            <label class="form-check">
-              <input type="checkbox" name="patches" value="Bloating & Digest Comfort" />
-              <span>Bloating &amp; Digest Comfort</span>
-            </label>
+    <label class="form-check">
+      <input type="checkbox" name="Interest_Bloating" value="true" />
+      <span>Bloating &amp; Digest Comfort</span>
+    </label>
 
-            <label class="form-check">
-              <input type="checkbox" name="patches" value="Skin Barrier" />
-              <span>Skin Barrier</span>
-            </label>
+    <label class="form-check">
+      <input type="checkbox" name="Interest_Skin" value="true" />
+      <span>Skin Barrier</span>
+    </label>
 
-            <label class="form-check">
-              <input type="checkbox" name="patches" value="Jet Lag Restored" />
-              <span>Jet Lag Restored</span>
-            </label>
-          </div>
+    <label class="form-check">
+      <input type="checkbox" name="Interest_JetLag" value="true" />
+      <span>Jet Lag Restored</span>
+    </label>
+  </div>
 
-          <div class="form-submit">
-            <button type="submit" class="btn-primary">Join the Pre-Order List</button>
-          </div>
+  <div class="form-submit">
+    <button type="submit" class="btn-primary">Join the Pre-Order List</button>
+  </div>
 
-          <p class="form-trust">No spam. Limited access. Priority delivery.</p>
-        </form>
+  <p class="form-trust">No spam. Limited access. Priority delivery.</p>
+</form>
       </div>
 
       <!-- Success message (hidden by default) -->
