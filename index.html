@@ -614,51 +614,49 @@
     });
 
    // --- AJAX Form submission (Klaviyo) ---
+    // --- AJAX Form submission (Klaviyo) ---
     document.getElementById('preOrderForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      var form = this;
-      var submitBtn = form.querySelector('button[type="submit"]');
-      
-      // Bloquear botón para evitar doble envío
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-
-      // Usamos URLSearchParams para asegurar que Klaviyo reciba los datos como un formulario estándar
-      var formData = new FormData(form);
-      var params = new URLSearchParams();
-
-      // Recorremos todos los campos para incluirlos en el envío
-      for (var pair of formData.entries()) {
-        params.append(pair[0], pair[1]);
-      }
-
-      // Envío a Klaviyo
-      fetch(form.action, {
-        method: 'POST',
-        body: params, // Enviamos como parámetros de URL para máxima compatibilidad
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      })
-      .then(function() {
-        // Ocultar formulario y mostrar éxito
-        document.getElementById('formWrapper').style.display = 'none';
-        var success = document.getElementById('formSuccess');
-        success.style.display = 'flex';
+        e.preventDefault();
+        var form = this;
+        var submitBtn = form.querySelector('button[type="submit"]');
         
-        // Animación de entrada
-        setTimeout(function() {
-          success.classList.add('visible');
-        }, 10);
-      })
-      .catch(function(error) {
-        console.error('Error:', error);
-        // En caso de error, también mostramos el mensaje de éxito para no frustrar al usuario
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+  
+        // Creamos un objeto de datos plano
+        var formData = new FormData(form);
+        var urlEncodedData = "";
+        var urlEncodedDataPairs = [];
+  
+        // Forzamos la captura manual de cada campo para asegurar compatibilidad
+        for (var pair of formData.entries()) {
+          urlEncodedDataPairs.push(encodeURIComponent(pair[0]) + '=' + encodeURIComponent(pair[1]));
+        }
+        urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
+  
+        // Envío usando el método tradicional de formulario para saltar restricciones
+        fetch(form.action, {
+          method: 'POST',
+          body: urlEncodedData,
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        })
+        .then(function() {
+          // Éxito: Ocultar y mostrar mensaje de Altessia
+          document.getElementById('formWrapper').style.display = 'none';
+          var success = document.getElementById('formSuccess');
+          success.style.display = 'flex';
+          setTimeout(function() { success.classList.add('visible'); }, 10);
+        })
+        .catch(function() {
         document.getElementById('formWrapper').style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'flex';
+        var success = document.getElementById('formSuccess'); // Definimos success
+        success.style.display = 'flex';
+        setTimeout(function() { success.classList.add('visible'); }, 10);
       });
-    });
+      });
   </script>
 
 </body>
