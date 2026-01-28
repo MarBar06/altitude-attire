@@ -1135,6 +1135,126 @@ p {
 
 
 /* ============================================
+   FORM SUCCESS MESSAGE
+   ============================================ */
+.form-success {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  max-width: 560px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.form-success.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-success-inner {
+  text-align: center;
+  background: #F6F6F3;
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  width: 100%;
+}
+
+.form-success-inner svg {
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
+.form-success-inner h3 {
+  font-family: 'Tenor Sans', 'Inter', sans-serif;
+  font-size: 1.5rem;
+  color: #4C4A47;
+  margin-bottom: 1rem;
+}
+
+.form-success-inner p {
+  font-size: 0.95rem;
+  color: rgba(76, 74, 71, 0.7);
+  line-height: 1.8;
+}
+
+
+/* ============================================
+   TOM SELECT — Altessia Theme Overrides
+   ============================================ */
+.ts-wrapper.single .ts-control {
+  background: #fff;
+  border: 1.5px solid rgba(198, 162, 117, 0.2);
+  border-radius: 14px;
+  padding: 0.85rem 1.15rem;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  color: #4C4A47;
+  box-shadow: none;
+  cursor: pointer;
+  min-height: 0;
+}
+
+.ts-wrapper.single .ts-control::after {
+  /* Replace default caret with Altessia gold chevron */
+  border-color: #C6A275 transparent transparent transparent;
+}
+
+.ts-wrapper.single.focus .ts-control {
+  border-color: #C6A275;
+  box-shadow: 0 0 0 3px rgba(198, 162, 117, 0.1);
+}
+
+.ts-wrapper .ts-control > input {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #4C4A47;
+}
+
+.ts-wrapper .ts-control > input::placeholder {
+  color: rgba(76, 74, 71, 0.3);
+}
+
+.ts-dropdown {
+  border: 1.5px solid rgba(198, 162, 117, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  margin-top: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+.ts-dropdown .option {
+  padding: 0.65rem 1.15rem;
+  color: #4C4A47;
+  transition: background-color 0.15s ease;
+}
+
+.ts-dropdown .option:hover,
+.ts-dropdown .active {
+  background: rgba(198, 162, 117, 0.08);
+  color: #4C4A47;
+}
+
+.ts-dropdown .option.selected {
+  background: rgba(198, 162, 117, 0.15);
+  color: #4C4A47;
+}
+
+.ts-wrapper.single .ts-control .item {
+  color: #4C4A47;
+}
+
+/* Placeholder styling */
+.ts-wrapper.single .ts-control .item[data-value=""] {
+  color: rgba(76, 74, 71, 0.3);
+}
+
+
+/* ============================================
    RESPONSIVE REFINEMENTS
    ============================================ */
 @media (max-width: 768px) {
