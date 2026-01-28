@@ -613,38 +613,50 @@
       maxOptions: 250
     });
 
-    // --- AJAX Form submission (Klaviyo) ---
+   // --- AJAX Form submission (Klaviyo) ---
     document.getElementById('preOrderForm').addEventListener('submit', function (e) {
       e.preventDefault();
       var form = this;
-      var formData = new FormData(form);
       var submitBtn = form.querySelector('button[type="submit"]');
+      
+      // Bloquear botón para evitar doble envío
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
 
+      // Usamos URLSearchParams para asegurar que Klaviyo reciba los datos como un formulario estándar
+      var formData = new FormData(form);
+      var params = new URLSearchParams();
+
+      // Recorremos todos los campos para incluirlos en el envío
+      for (var pair of formData.entries()) {
+        params.append(pair[0], pair[1]);
+      }
+
+      // Envío a Klaviyo
       fetch(form.action, {
         method: 'POST',
-        body: formData,
-        mode: 'no-cors'
+        body: params, // Enviamos como parámetros de URL para máxima compatibilidad
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
       })
       .then(function() {
-        // Hide form, show success
+        // Ocultar formulario y mostrar éxito
         document.getElementById('formWrapper').style.display = 'none';
         var success = document.getElementById('formSuccess');
         success.style.display = 'flex';
-        // Trigger fade-in
-        requestAnimationFrame(function() {
+        
+        // Animación de entrada
+        setTimeout(function() {
           success.classList.add('visible');
-        });
+        }, 10);
       })
-      .catch(function() {
-        // Even on network error with no-cors, treat as sent
+      .catch(function(error) {
+        console.error('Error:', error);
+        // En caso de error, también mostramos el mensaje de éxito para no frustrar al usuario
         document.getElementById('formWrapper').style.display = 'none';
-        var success = document.getElementById('formSuccess');
-        success.style.display = 'flex';
-        requestAnimationFrame(function() {
-          success.classList.add('visible');
-        });
+        document.getElementById('formSuccess').style.display = 'flex';
       });
     });
   </script>
