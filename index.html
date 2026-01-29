@@ -362,8 +362,7 @@
       </div>
 
       <div class="form-wrapper fade-up" id="formWrapper">
-        <form id="preOrderForm" action="https://manage.kmail-lists.com/subscriptions/subscribe" method="POST">
-        <input type="hidden" name="g" value="ThaeXj" />
+        <form id="preOrderForm" action="https://script.google.com/macros/s/AKfycbwDJZuzxRLnPjqHKcfiAW_Ni9Jvij1I9q7syUvFB26jZhU1JDPE2SF8zQadXjjceEwG/exec" method="POST">
       
         <div class="form-row">
           <label for="name">Name</label>
@@ -613,50 +612,56 @@
       maxOptions: 250
     });
 
-   // --- AJAX Form submission (Klaviyo) ---
-    // --- AJAX Form submission (Klaviyo) ---
+    // --- AJAX Form submission (Google Sheets) ---
     document.getElementById('preOrderForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var form = this;
-        var submitBtn = form.querySelector('button[type="submit"]');
-        
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-  
-        // Creamos un objeto de datos plano
-        var formData = new FormData(form);
-        var urlEncodedData = "";
-        var urlEncodedDataPairs = [];
-  
-        // Forzamos la captura manual de cada campo para asegurar compatibilidad
-        for (var pair of formData.entries()) {
-          urlEncodedDataPairs.push(encodeURIComponent(pair[0]) + '=' + encodeURIComponent(pair[1]));
+      e.preventDefault();
+      var form = this;
+      var submitBtn = form.querySelector('button[type="submit"]');
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      var formData = new FormData(form);
+      
+      // Procesar los intereses para enviarlos como una lista limpia
+      var selectedInterests = [];
+      form.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+        // Buscamos el texto que está en el <span> justo al lado del checkbox
+        selectedInterests.push(cb.parentElement.querySelector('span').textContent);
+      });
+
+      // Preparamos los datos exactamente como los espera el Apps Script
+      var params = new URLSearchParams();
+      params.append('$first_name', formData.get('$first_name'));
+      params.append('email', formData.get('email'));
+      params.append('City', formData.get('City'));
+      params.append('$country', formData.get('$country'));
+      params.append('Role', formData.get('Role'));
+      params.append('interests', selectedInterests.join(', ')); // Los une con comas
+
+      fetch(form.action, {
+        method: 'POST',
+        body: params,
+        mode: 'no-cors', // Fundamental para que Google Sheets no bloquee el envío
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
         }
-        urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
-  
-        // Envío usando el método tradicional de formulario para saltar restricciones
-        fetch(form.action, {
-          method: 'POST',
-          body: urlEncodedData,
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          }
-        })
-        .then(function() {
-          // Éxito: Ocultar y mostrar mensaje de Altessia
-          document.getElementById('formWrapper').style.display = 'none';
-          var success = document.getElementById('formSuccess');
-          success.style.display = 'flex';
-          setTimeout(function() { success.classList.add('visible'); }, 10);
-        })
-        .catch(function() {
+      })
+      .then(function() {
+        // Mostrar mensaje de éxito de Altessia
         document.getElementById('formWrapper').style.display = 'none';
-        var success = document.getElementById('formSuccess'); // Definimos success
+        var success = document.getElementById('formSuccess');
+        success.style.display = 'flex';
+        setTimeout(function() { success.classList.add('visible'); }, 10);
+      })
+      .catch(function(error) {
+        // En caso de error, también mostramos éxito para no perder la experiencia de usuario
+        document.getElementById('formWrapper').style.display = 'none';
+        var success = document.getElementById('formSuccess');
         success.style.display = 'flex';
         setTimeout(function() { success.classList.add('visible'); }, 10);
       });
-      });
+    });
   </script>
 
 </body>
