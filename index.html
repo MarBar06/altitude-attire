@@ -30,7 +30,7 @@
   <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="src/index.css" />
 </head>
 
 <body>
@@ -42,7 +42,7 @@
     <div class="container">
       <div class="nav-inner">
         <a href="#" class="nav-logo">
-          <img src="src/assets/logotrans_beige.png" alt="ALTESSIA" />
+          <img src="src/assets/alastrans_beige.png" alt="ALTESSIA" />
         </a>
 
         <nav class="nav-links">
@@ -363,17 +363,17 @@
 
       <div class="form-wrapper fade-up" id="formWrapper">
         <form id="preOrderForm" action="https://script.google.com/macros/s/AKfycbwDJZuzxRLnPjqHKcfiAW_Ni9Jvij1I9q7syUvFB26jZhU1JDPE2SF8zQadXjjceEwG/exec" method="POST">
-      
+
         <div class="form-row">
           <label for="name">Name</label>
           <input type="text" id="name" name="$first_name" placeholder="Your name" required />
         </div>
-      
+
         <div class="form-row">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="your@email.com" required />
         </div>
-      
+
         <div class="form-row-grid">
           <div class="form-row">
             <label for="city">City</label>
@@ -386,7 +386,7 @@
             </select>
           </div>
         </div>
-      
+
         <div class="form-row">
           <label for="role">Role</label>
           <select id="role" name="Role" required>
@@ -617,12 +617,12 @@
       e.preventDefault();
       var form = this;
       var submitBtn = form.querySelector('button[type="submit"]');
-      
+
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
 
       var formData = new FormData(form);
-      
+
       // Procesar los intereses para enviarlos como una lista limpia
       var selectedInterests = [];
       form.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
